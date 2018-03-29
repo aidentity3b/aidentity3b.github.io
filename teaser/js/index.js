@@ -111,7 +111,8 @@ $(function () {
     ctx.lineWidth = 4;
     ctx.arc(cw / 2, ch / 2, cw * 0.4705, 0, 2 * Math.PI, false);
     ctx.stroke();
-    ctx.strokeStyle = 'rgba(253,33,51,1)';
+    ctx.strokeStyle = 'rgba(0,191,210,1)';
+    //ctx.strokeStyle = 'rgba(253,33,51,1)';
     ctx.beginPath();
     ctx.lineWidth = 2;
     var taskFPS = (this.frm % this.loopFPS) / this.loopFPS;
@@ -133,11 +134,17 @@ $(function () {
     //    ctx.fillText("width : " + cw + " / height : " +   ch + "px",cw/2, ch*0.89, 500);
     var dataTextH = ch * 0.91;
     var subDataTextH = dataTextH + 16;
-    ctx.fillText(this.frm, cw / 2 - 120, dataTextH, 500);
-    ctx.fillText(cw + " px", cw / 2, dataTextH, 500);
-    ctx.fillText(ch + " px", cw / 2 + 120, dataTextH, 500);
+    //ctx.fillText(this.frm, cw / 2 - 120, dataTextH, 500);
+    var c = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9","a", "b", "c", "d", "e", "f"];
+    var s = "";
+    for(var i = 0; i < 8; i++){
+      s += c[Math.floor(Math.random() * 15.99)];
+    }
+    ctx.fillText("0x" + s, cw / 2 - 120, dataTextH, 500);
+    ctx.fillText(cw, cw / 2, dataTextH, 500);
+    ctx.fillText(ch, cw / 2 + 120, dataTextH, 500);
     ctx.font = "8px 'Futura'";
-    ctx.fillText("frame", cw / 2 - 120, subDataTextH, 500);
+    ctx.fillText("validation", cw / 2 - 120, subDataTextH, 500);
     ctx.fillText("width", cw / 2, subDataTextH, 500);
     ctx.fillText("height", cw / 2 + 120, subDataTextH, 500);
     ctx.font = "24px 'Futura'";
@@ -264,7 +271,7 @@ $(function () {
 
   // 日付をYYYY/MM/DD HH:DD:MI:SS形式で取得
   var yyyymmdd = function () {
-    return "2018/04/01";
+    return "2018/06/01";
     var date = new Date();
     var yyyy = date.getFullYear();
     var mm = toDoubleDigits(date.getMonth() + 1);
@@ -272,7 +279,7 @@ $(function () {
     return yyyy + '/' + mm + '/' + dd;
   };
   var hhmissms = function () {
-    var dist = new Date(2018, 4 - 1, 1, 0, 0, 0, 0);
+    var dist = new Date(2018, 6 - 1, 1, 0, 0, 0, 0);
     var now = new Date();
 
     if (dist < now) {
@@ -311,7 +318,7 @@ $(function () {
 
 
   var FPS = 30;
-  var loopFPS = 1000;
+  var loopFPS = 500;
   var canvasView = new canvasView(null, FPS, loopFPS);
   canvasView.initCanvas();
   var glitch = new glitchBox(canvasView.canvas);
