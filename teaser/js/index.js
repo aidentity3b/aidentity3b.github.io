@@ -27,13 +27,19 @@ $(function () {
     this.ctx.putImageData(image, 0, renderLineHeight - 10);
   };
   glitchBox.prototype.glitchSlip = function (waveDistance) {
-    var startHeight = this.height * Math.random();
-    var endHeight = startHeight + 30 + (Math.random() * 40);
-    for (var h = startHeight; h < endHeight; h++) {
+    //var startHeight = (this.height / 2) + (this.height/5 * Math.random()) - (this.height/10);
+    //var endHeight = startHeight + 10/* + (Math.random() * 10)*/;
+    /*for (var h = startHeight; h < endHeight; h++) {
       if (Math.random() < 0.1) h++;
-      var image = this.ctx.getImageData(0, h, this.width, 1);
-      this.ctx.putImageData(image, Math.random() * waveDistance - (waveDistance / 2), h);
-    }
+      var image = this.ctx.getImageData(this.width*0.2, h, this.width*0.6, 1);
+      this.ctx.putImageData(image, (Math.random() * waveDistance - (waveDistance / 2)) + this.width*0.2, h);
+    }*/
+  };
+  glitchBox.prototype.glitchRect = function () {
+    var image = this.ctx.getImageData(this.width*0.2+Math.random()*this.width*0.6, (this.height / 2) + (this.height/5 * Math.random()) - (this.height/10), this.width*0.4*Math.random()+20, 15+Math.random()*15);
+    //var data = image.data;
+    //for (var i = 0;i<data.length; i++)
+    this.ctx.putImageData(image, this.width*0.1+Math.random()*this.width*0.5, (this.height / 2) + (this.height/5 * Math.random()) - (this.height/10));
   };
   glitchBox.prototype.glitchSlipColor = function (waveDistance) {
     var startHeight = this.height * Math.random();
@@ -271,7 +277,7 @@ $(function () {
 
   // 日付をYYYY/MM/DD HH:DD:MI:SS形式で取得
   var yyyymmdd = function () {
-    return "2018/06/01";
+    return "2018/08/08";
     var date = new Date();
     var yyyy = date.getFullYear();
     var mm = toDoubleDigits(date.getMonth() + 1);
@@ -279,11 +285,12 @@ $(function () {
     return yyyy + '/' + mm + '/' + dd;
   };
   var hhmissms = function () {
-    var dist = new Date(2018, 6 - 1, 1, 0, 0, 0, 0);
+    var dist = new Date(2018, 8 - 1, 8, 12, 0, 0, 0);
     var now = new Date();
 
     if (dist < now) {
       //通り過ぎてる
+      location.replace("../index.html");
       return "00:00:00:00";
     } else {
       //まだある
@@ -338,7 +345,8 @@ $(function () {
       canvasView.bgCanvasImage = null;
       canvasView.width = $(window).width();
       canvasView.height = $(window).height();
-
+      glitch.width = canvasView.width;
+      glitch.height = canvasView.height;
     }, 200);
   });
 
@@ -351,13 +359,16 @@ $(function () {
     }
     if (true || canvasView.frmLoop < 100) {
       glitch.glitchSlip(8);
+      glitch.glitchRect();
+      glitch.glitchRect();
+      glitch.glitchRect();
     }
     if (994 < canvasView.frmLoop) {
       glitch.glitchSlipColor(50);
     }
     // renderLineHeight, cuttingHeight
     glitch.glitchWave((canvasView.frm * 3) % canvasView.height, 3);
-    glitch.chromaticAberration(1, 0);
+    //glitch.chromaticAberration(1, 0);
     //  if(counter >= 10)clearInterval(timer);  
   }
 
