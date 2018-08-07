@@ -1,0 +1,733 @@
+.progress-mark {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -40px;
+    -webkit-transition: all .1s ease-in;
+    -moz-transition: all .1s ease-in;
+    -ms-transition: all .1s ease-in;
+    -o-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+}
+
+#progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1000;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.progress-mark .base {
+    opacity: 0.5;
+}
+
+.progress-mark svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-mark .loader {
+    opacity: 1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 100;
+    animation: load 0.5s linear 0s infinite;
+    -o-animation: load 0.5s linear 0s infinite;
+    -ms-animation: load 0.5s linear 0s infinite;
+    -moz-animation: load 0.5s linear 0s infinite;
+    -webkit-animation: load 0.5s linear 0s infinite;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.progress-mark svg circle {
+    fill: none;
+    stroke: rgb(152, 209, 247);
+    stroke-miterlimit: 10;
+    stroke-width: 1px;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+@keyframes load {
+	0%{ transform: rotate(0deg); }
+	100%{ transform: rotate(360deg); }
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+a, a:hover{
+    color: inherit;
+    text-decoration: none;
+}
+body {
+    color: #fff;
+    background-color: #000;
+    font-family: "Noto Sans Japanese","メイリオ",meiryo,"Hiragino Kaku Gothic ProN",sans-serif;
+    font-family: "Noto Sans Japanese",Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "palt";
+    text-align: justify;
+    font-weight: 500;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.03em;
+    overflow-x: hidden;
+}
+
+.table{
+    margin-top: 20px;
+}
+
+
+/*-----------------------------
+ナビゲーションバー
+-------------------------------
+*/
+#navbar-container{
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+    bottom: 0;
+}
+
+#navbar ul{
+    margin: 0px auto 0px;
+    text-align: center;
+    display: table;
+    border-radius:6px 6px 0 0;
+    background-color: rgba(159, 211, 224, 0.144);
+    box-shadow: 0 0 5px transparent;
+    transition: all 300ms 0s ease-out;
+    color: #000;
+    overflow:hidden;
+}
+
+#navbar ul:hover,#navbar #navbar-filled{
+    background-color:#00bfd2;
+    box-shadow: 0 0 5px #000000;
+}
+#navbar ul:hover .navbar-item,#navbar #navbar-filled .navbar-item{
+    color: #fff;
+    border-right: dotted 2px #ffffff;
+}
+#navbar ul:hover .border-none,#navbar #navbar-filled .border-none{
+    color: #fff;
+    border-right: none;
+}
+
+#navbar ul .navbar-item{
+    z-index: inherit;
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 190px;
+    border-right: dotted 2px transparent;
+    transition: all 300ms 0s ease-out;
+    background-color: rgba(234, 8, 64, 0);
+}
+#navbar ul .navbar-item:hover,#navbar #navbar-filled .navbar-item:hover{
+    color: #00bfd2;
+    background-color: #FFFFFF;
+    
+}
+#navbar ul .border-none{
+    border-right: none;
+}
+
+@media (max-width: 991px) {
+    #drawer-container{
+        display: block;
+    }
+    #navbar-container{
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    #drawer-container{
+        display:none;  
+    }
+    #navbar-container{
+        display: block;
+    }
+}
+
+
+#drawer-container{
+    z-index: 500;
+}
+.drawer-container{
+    z-index: 504;
+}
+.drawer-nav{
+    z-index: 502
+}
+.drawer-hamburger-icon,.drawer-hamburger-icon::before,.drawer-hamburger-icon::after{
+    background-color: #ff0051;
+}
+
+.intro-panel{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+    z-index: 0;
+}
+#logo-outline{
+    width: 100%;
+    height: 100%;
+}
+/*-----------------------------
+背景
+-------------------------------
+*/
+.global-background{
+    position:fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+/*-----------------------------
+メインビジョン
+-------------------------------
+*/
+#wrapper{
+    height: 100%;
+}
+#mainvision{  
+    background-image: url("../images/IMG_3991a.jpg");
+    background-size:  cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    transition: all 300ms 0s ease-out;
+    z-index: 1;
+}
+
+#logo{
+    position: absolute;
+    bottom:15%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    padding: 20px;
+    z-index: 5;
+}
+#logo img{
+    width: 100%;
+}
+.logo-container{
+    display: block;
+    margin: 0 auto;
+    width: 720px;
+    max-width: 90%;
+}
+.logo-bound{
+    width: 100%;
+}
+.copy-container{
+    position: relative;
+    top: 10vh;
+    width: 90%;
+    text-align: right;
+}
+#logo .logo-container .logo-bound .logo-caption{
+    background-color: #000;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    bottom: 30px;
+    width: 65%;
+}
+.logo-main{
+
+}
+.copy{
+    font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+    text-align: left;
+    position: absolute;
+    top: 0px;
+    height: 350px;
+    font-size: 2em;
+    right: auto;
+    left: 0;
+    background-color: black;
+    color: #00bfd2;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+}
+.capt{
+    font-size: 12pt;
+    font-weight: 500;
+    font-family: 'Ropa Sans';
+}
+.navbar-btn{
+    display:block;
+}
+
+
+
+/*-----------------------------
+ななめセグメント
+-------------------------------
+*/
+
+
+  .tilt {
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+    padding: 170px 0;
+    top: -12vw;
+z-index: 1;
+  }
+  
+  .tilt:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 80%;
+    margin: 3% -10% 0;
+    background: #5f90c5;
+    -webkit-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+    z-index: -1;
+  }
+  
+  .tilt-inner {
+    box-sizing: boder-box;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 100px 10px 120px;
+    color: #fff;
+    text-align: center;
+  }
+
+/*-----------------------------
+SNS類
+-------------------------------
+*/
+.social{
+    font-size: 3em;
+    position: relative;
+    top: 50px;
+    left: 20px;
+    width: 50%;
+}
+.social a{
+    color: white;
+    transition: all 300ms 0s cubic-bezier(.17,.84,.44,1);
+}
+.social-twitter:hover{
+    color: #1DA1F2;
+    text-shadow: 0 0 10px #fff;
+}
+.social-instagram:hover{
+    color: rgb(217,49,117);
+    text-shadow: 0 0 10px #fff;
+}
+/*-----------------------------
+リアルタイム上映情報
+-------------------------------
+*/
+
+/*#realtimeinfo-container{
+    position: relative;
+    top: -20%;
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+#realtimeinfo-container:before{
+    background-color: #fff;
+}
+
+#realtimeinfo-container .tilt-inner{
+    min-height: 500px;
+    position: relative;
+    top: -90px;
+}
+
+.realtimeinfo{
+    color: #2EA3FF;
+
+text-align: center;
+
+position: relative;
+
+top: 10vw;
+
+right: 0;
+
+bottom: 0;
+
+left: 0;
+
+margin: auto;
+
+width: 100%;
+
+height: 100%;
+
+vertical-align: middle;
+}
+
+#realtimeinfo-finished{
+    display: none;
+}
+#realtimeinfo-remain
+{
+    display: none;
+}
+
+/*-----------------------------
+スケジュール・Twitter
+-------------------------------
+*/
+
+#info{
+    position: relative;
+    top: -400px;
+    z-index: 1;
+    color: #000;
+}
+#info:before{
+    background-color: #111d2f;
+}
+
+
+/*-----------------------------
+ストーリー
+-------------------------------
+*/
+#story{
+    position: relative;
+    top: -500px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/*-----------------------------
+アクセス
+-------------------------------
+*/
+.access{
+    position: relative;
+    top: -500px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.access iframe{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.access .alert{
+    margin: 10px;
+}
+
+
+
+
+/*-----------------------------
+クレジット
+-------------------------------
+*/
+#credit-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    display: none;
+    background-color:rgba(255,255,255,0.9);
+}
+#credit-container{
+    height: 100%;
+    background: url(../images/dummy.png) no-repeat center center rgba(0,0,0,0);
+    background-size: contain;
+
+}
+/*-----------------------------
+ラッパー共通
+-------------------------------
+*/
+.btn-wrapper-close{
+    position: fixed;
+    width: 50px;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-size: 3em;
+    transition: all .2s ease;
+    text-shadow: 0 0 5px #000;
+    z-index: 200;
+}
+.btn-wrapper-close:hover{
+    color: rgba(253,33,51,1);
+}
+.btn-wrapper-close:active{
+    color: rgba(253, 33, 51, 0.315);
+}
+/*-----------------------------
+キャスト
+-------------------------------
+*/
+#cast-wrapper{
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    z-index:50;
+    display: none;
+    background: #fff url(../images/dot-grid.png) repeat;
+    background-attachment: fixed;
+    font-weight: 100;
+    color: #000;
+}
+.cast-select-list{
+    width: 300px;
+    height: 70px;
+    margin: 20px auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+.cast-select-list ul{
+    list-style: none;
+}
+.cast-select-list ul li{
+    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-color: rgb(197, 197, 197);
+    transition: all .1s ease;
+    margin: 2px 10px;
+    border: #fff 3px solid;
+}
+.cast-select-list ul .cast-select-list-item-invert{
+    background-color: rgb(47, 47, 47);
+    border: #fff 3px solid;
+}
+.cast-select-list ul .cast-select-list-item-selected{
+    background-color: #00bfd2;
+}
+.cast-select-list ul li:hover{
+    border-radius: 12.5px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-color: rgba(253,33,51,1);
+}
+.cast-select-control{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.cast-select-control a{
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    display: -webkit-flex;
+ display: flex;
+ -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+ align-items: center; /* 縦方向中央揃え */
+ -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+ justify-content: center; /* 横方向中央揃え */
+    font-size: 2em;
+    transition: all .1s ease;
+}
+.cast-select-control a:hover{
+    color: rgba(253,33,51,1);
+}
+.cast-select-control a:active{
+    color: #ccc;
+}
+.next-cast-button{
+    right: 0;
+}
+.cast-heading-block{
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-right: solid 0  rgba(253,33,51,1);
+}
+.cast-performer-name-container{
+    width: 200px;
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+    text-align: right;
+}
+.cast-item{
+    margin: 20px 0;
+}
+.cast-item h2 .capt{
+    text-align: right;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 300px;
+}
+.cast-item h2,.cast-item h4, .cast-item h5{
+    font-weight: 100;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    position: relative;
+}
+.cast-item h2, .cast-item h5{
+    border-left: solid 10px rgb(197, 197, 197);
+    background-color: #00bfd2;
+}
+.cast-item h4{
+    background-color:#fff;
+    color: #000;
+    font-weight: 100;
+    font-size: 1.2em;
+    margin-left: auto;
+    margin-right: 0;
+}
+/*-----------------------------
+ストーリー
+-------------------------------
+*/
+#story-wrapper{
+    padding-top: 50px;
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    z-index: 100;
+    display: none;
+}
+
+#story1{
+    background: linear-gradient(to right,#00D9FF99, #006CFA99);
+    height: 500px;
+}
+#story2{
+    background: linear-gradient(to left,rgba(255, 0, 128, 0.6), rgba(250, 0, 0, 0.6));
+    height: 500px;
+}
+
+.story-area{
+    position: relative;
+    z-index:1;
+    border-left: solid 5px #00bfd2;
+    background-color: rgb(53, 53, 53);
+    color: rgb(255, 255, 255);
+    font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+    padding: 20px;
+    line-height: 200%;
+    font-size: 1.3em;
+}
+.section-heading-container{
+    z-index: 10;
+    width: 200px;
+    position: relative;
+    margin: 20px auto;
+
+}
+.section-heading{
+    width: 200px;
+    white-space: nowrap;
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    text-align: center;
+    background-color: #000;
+    font-weight: 900;
+    line-height: 0.8em;
+    padding: 10px 0;
+}
+.section-heading-invert{
+    color: rgb(0,0,0);
+    background-color: #fff;
+}
+.band{
+    margin: 30px 0;
+}
+
+/*-----------------------------
+トレーラー
+-------------------------------
+*/
+#trailer-wrapper{
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    display:none;
+    width: 100%;
+    height:100%;
+    z-index: 100;
+}
+#trailer-main{
+    text-align: center;
+    margin:20px auto;
+}
+
+/*-----------------------------
+フッター
+-------------------------------
+*/
+.footer{
+    position: relative;
+    z-index: 10;
+    background-color: rgb(14, 20, 36);
+}
+.footer .container{
+    height: 230px;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.footer .container .footer-designer{
+    border-bottom: dotted 3px white;
+}
+.footer-links{
+    color: rgb(88, 101, 136);
+    font-size: 0.8em;
+}
+.footer-link{
+    margin: 20px;
+    display: inline-block;
+}

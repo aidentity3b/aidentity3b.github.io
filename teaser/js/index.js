@@ -285,7 +285,7 @@ $(function () {
     return yyyy + '/' + mm + '/' + dd;
   };
   var hhmissms = function () {
-    var dist = new Date(2018, 8 - 1, 8, 12, 0, 0, 0);
+    var dist = new Date(2018, 8 - 1, 8, 10, 0, 0, 0);
     var now = new Date();
 
     if (dist < now) {
