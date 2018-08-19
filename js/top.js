@@ -95,22 +95,28 @@ var castItems = [
     {
         name: "谷弘樹",
         caption: "Tani Hiroki",
-        performer: "",
+        performer: "遠藤龍之介",
         character: "東京の高校に通う高校二年生。謎の電話主に導かれ、仲間の中に潜むAIを探し出そうと奔走する。",
+        comment: "どんな人にでも楽しんでもらえる映画になっていると思います。お隣の友達と是非見に来てください。",
+        bg: "images/IMGP6269-croped.JPG",
         invert: false
     },
     {
         name: "紅坂かえで",
         caption: "Kohsaka Kaede",
-        performer: "",
+        performer: "清水萌",
         character: "弘樹の小学校以前よりの友人。弘樹のよき理解者。",
+        comment: "かえでは常に人のことをよく見ていて、争い事に足を踏み入れられない弱さと信頼している人だけには言いたいことをしっかり言える強さを併せ持っていて、6人の中では最もまわりにいそうな現代っ子ぽいキャラクターだなと感じました。この個性が特に出ているのが主人公の弘樹を慰める2つのシーンです。ここに友達への無条件の信頼と愛情を感じ、演者として一番のお気に入りになりました。<br>たくさんの人の想いが詰まったAidentity、ぜひ見にきてください！",
+        bg: "images/S_8308552227916.jpg",
         invert: false
     },
     {
         name: "相川新一",
         caption: "Aikawa Shinichi",
-        performer: "",
+        performer: "岩城圭祐",
         character: "弘樹たち６人のリーダー的存在。情に厚く信頼されているが、仲間を思う故厳しい面を見せることも。",
+        comment: "毎回の撮影を楽しむことができて良かったです。撮影に協力してくださった方々、ありがとうございました。クラス全員で一生懸命作り上げたこの映画を観て楽しんで頂けると幸いです。",
+        bg: "images/S_8308552496818.jpg",
         invert: false
     },
     {
@@ -118,13 +124,17 @@ var castItems = [
         caption: "Kamimura Nanami",
         performer: "",
         character: "弘樹のクラスを担当する教育実習生。担当は現代文。",
+        comment: "",
+        bg: "",
         invert: false
     },
     {
         name: "大坊歩",
         caption: "Daibou Ayumu",
-        performer: "",
+        performer: "川崎文也",
         character: "弘樹の友人のひとり。実は成績がピンチだが、本人はあまり気にしていない。「裏口入学マスター」の異名を持つ。",
+        comment: "カメラの前で演技するのは緊張して難しかったです<br>でも、頑張って「歩」を演じたのでぜひ見てください！",
+        bg: "images/S_8308553030678.jpg",
         invert: false
     },
     {
@@ -132,13 +142,17 @@ var castItems = [
         caption: "Etoh Tomoka",
         performer: "",
         character: "弘樹の友人のひとり。頭の回転が速い。冗談が過ぎてつい嫌味を言ってしまうのが悩みの種。",
+        comment: "",
+        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
         invert: false
     },
     {
         name: "深田凛",
         caption: "Fukada Rin",
-        performer: "",
+        performer: "平出倭子",
         character: "弘樹の友人のひとり。ほとんど言葉を発しないが、なぜかいつも弘樹たちのそばにいる。AIに関して何かを知っている様子。",
+        comment: "深田凛、実は猿人。<br>それは迷信、なんて斬新！<br>そんな片鱗、どこにもnothing。",
+        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
         invert: false
     },
     {
@@ -146,6 +160,8 @@ var castItems = [
         caption: "Tani Sakura",
         performer: "",
         character: "弘樹の妹。最近ゲットしたしゃべるぬいぐるみから離れられない。",
+        comment: "",
+        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
         invert: false
     },
     {
@@ -153,6 +169,8 @@ var castItems = [
         caption: "Ishiguro",
         performer: "",
         character: "謎に包まれた黒服の男。",
+        comment: "クラスみーんなの頑張りが詰まっています！ストーリーや雰囲気から引き込まれること間違いなしですよ！<br>是非、足をお運びください！",
+        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
         invert: true
     },
     {
@@ -160,6 +178,8 @@ var castItems = [
         caption: "Urushibara",
         performer: "",
         character: "謎に包まれた黒服の女。",
+        comment: "",
+        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
         invert: true
     },
     {
@@ -167,13 +187,17 @@ var castItems = [
         caption: "Kurui Kazunari",
         performer: "",
         character: "AI研究で世界に名を馳せる有名な科学者。裏では黒服の研究組織のもとで暗躍する。",
+        comment: "",
+        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
         invert: true
     },
     {
-        name: "フセ校長先生",
+        name: "校長先生",
         caption: "Fuse",
         performer: "????",
         character: "弘樹たちの通う高校の校長。",
+        comment: "",
+        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
         invert: true
     }
 ]
@@ -217,6 +241,8 @@ function updateCast() {
     $(".cast-performer-name").html(castItems[currentCastNum].performer);
     $(".cast-info").html(castItems[currentCastNum].character);
     $(".cast-comment-heading").html("演者からひとこと");
+    $(".cast-comment").html(castItems[currentCastNum].comment);
+    $("#cast-wrapper").css("background-image", "url(" + castItems[currentCastNum].bg + ")");
     castAppearanceAnimation(castItems[currentCastNum].invert);
 }
 function castAppearanceAnimation(invert) {
@@ -229,8 +255,10 @@ function castAppearanceAnimation(invert) {
     });
     if (invert) {
         TweenMax.to($("#cast-wrapper"), 1.0, { backgroundColor: "#000", color: "#fff" });
+        TweenMax.to($(".cast-item"), 1.0, { backgroundColor: "rgba(0, 0, 0, 0.7);", color: "rgba(255, 255, 255, 0.7);" });
     } else {
         TweenMax.to($("#cast-wrapper"), 1.0, { backgroundColor: "#fff", color: "#000" });
+        TweenMax.to($(".cast-item"), 1.0, { backgroundColor: "rgba(255, 255, 255, 0.7);", color: "rgba(0, 0, 0, 0.7);" });
     }
 }
 
