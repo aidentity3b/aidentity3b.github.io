@@ -98,7 +98,7 @@ var castItems = [
         performer: "遠藤龍之介",
         character: "東京の高校に通う高校二年生。謎の電話主に導かれ、仲間の中に潜むAIを探し出そうと奔走する。",
         comment: "どんな人にでも楽しんでもらえる映画になっていると思います。お隣の友達と是非見に来てください。",
-        bg: "images/IMGP6269-croped.JPG",
+        bg: "images/IMGP6269-croped.jpg",
         invert: false
     },
     {
