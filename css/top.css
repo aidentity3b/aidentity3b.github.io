@@ -179,7 +179,7 @@ body {
 
 
 #drawer-container{
-    z-index: 500;
+    z-index: 1000;
 }
 .drawer-container{
     z-index: 504;
@@ -514,12 +514,11 @@ vertical-align: middle;
 -------------------------------
 */
 #cast-wrapper{
-    position: absolute;
     min-height: 100vh;
     width: 100%;
     z-index:50;
     display: none;
-    background: #fff url(../images/IMGP6269-croped.jpg) no-repeat center center;
+    background: #fff url(../images/IMGP6269-croped.jpg) no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
     font-weight: 100;
@@ -602,11 +601,12 @@ vertical-align: middle;
 }
 .cast-item{
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgba(255, 255, 255, 0.7);
     padding-top: 100px;
     padding-left: 50px;
     padding-right: 50px;
+    padding-bottom: 50px;
 }
 .cast-item h2 .capt{
     text-align: right;
@@ -669,7 +669,7 @@ vertical-align: middle;
     font-size: 1.3em;
 }
 .section-heading-container{
-    z-index: 10;
+    z-index: 1;
     width: 200px;
     position: relative;
     margin: 20px auto;
@@ -704,7 +704,7 @@ vertical-align: middle;
     display:none;
     width: 100%;
     height:100%;
-    z-index: 100;
+    z-index: 50;
 }
 #trailer-main{
     text-align: center;
