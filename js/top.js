@@ -143,7 +143,7 @@ var castItems = [
         performer: "",
         character: "弘樹の友人のひとり。頭の回転が速い。冗談が過ぎてつい嫌味を言ってしまうのが悩みの種。",
         comment: "",
-        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
+        bg: "",
         invert: false
     },
     {
@@ -152,7 +152,7 @@ var castItems = [
         performer: "平出倭子",
         character: "弘樹の友人のひとり。ほとんど言葉を発しないが、なぜかいつも弘樹たちのそばにいる。AIに関して何かを知っている様子。",
         comment: "深田凛、実は猿人。<br>それは迷信、なんて斬新！<br>そんな片鱗、どこにもnothing。",
-        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
+        bg: "",
         invert: false
     },
     {
@@ -161,7 +161,7 @@ var castItems = [
         performer: "",
         character: "弘樹の妹。最近ゲットしたしゃべるぬいぐるみから離れられない。",
         comment: "",
-        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
+        bg: "",
         invert: false
     },
     {
@@ -170,7 +170,7 @@ var castItems = [
         performer: "",
         character: "謎に包まれた黒服の男。",
         comment: "クラスみーんなの頑張りが詰まっています！ストーリーや雰囲気から引き込まれること間違いなしですよ！<br>是非、足をお運びください！",
-        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
+        bg: "",
         invert: true
     },
     {
@@ -179,7 +179,7 @@ var castItems = [
         performer: "",
         character: "謎に包まれた黒服の女。",
         comment: "",
-        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
+        bg: "",
         invert: true
     },
     {
@@ -187,8 +187,8 @@ var castItems = [
         caption: "Kurui Kazunari",
         performer: "",
         character: "AI研究で世界に名を馳せる有名な科学者。裏では黒服の研究組織のもとで暗躍する。",
-        comment: "",
-        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
+        comment: "この度は物語に影を落とす黒幕を演じさせていただきました。<br>最後まで目が離せないこの映画、それはクラス皆の努力の結晶。<br>ぜひお越しください！",
+        bg: "",
         invert: true
     },
     {
@@ -197,7 +197,7 @@ var castItems = [
         performer: "????",
         character: "弘樹たちの通う高校の校長。",
         comment: "",
-        bg: "../images/../../../../b-movie/assets/20180722/IMGP6277_720.JPG",
+        bg: "",
         invert: true
     }
 ]
@@ -389,6 +389,7 @@ function randomshuffle() {
 }
 function dummy() { }
 function invertColorRand() {
+    /*
     if (Math.random() > 0.9) {
 
         $("#mainvision").css({ filter: "invert(100%)" });
@@ -399,7 +400,7 @@ function invertColorRand() {
     setTimeout(() => {
         invertColorRand();
     }, 5000);
-
+*/
 }
 /*!
  * $ Simple glitching plugin
